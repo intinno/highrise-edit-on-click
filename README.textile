@@ -1,0 +1,51 @@
+h1. Highrise Style Edit On Click
+
+If there are many input fields in a form, the form page clutters up. 
+
+This plugin makes input fields editable on click as mentioned here. http://37signals.com/designexplore/Highrise_Edit_Contacts
+
+Each input field will have a blank state and an editable state. 
+
+
+h3. Features
+
+* Support for text input, text area and select fields
+* Supports helpers from form builders
+
+h3. Installation
+
+If you have not installed this plugin using @script/plugin install@ script,
+then copy assets/javascripts/edit_on_click.js file to your public/javascripts folder.
+To load this file with your Rails app simply add the following line to your layout:
+
+<pre><%= javascript_include_tag 'edit_on_click'%></pre>
+
+
+If you have installed this as a plugin in redmine, then javascripts will be automatically 
+copied to your public/plugin_assets/highrise-edit-on-click/javascripts folder
+To load this file with your Rails app simply add the following line to your layout:
+
+<pre><%= javascript_include_tag 'edit_on_click', :plugin => "highrise-edit-on-click" %></pre>
+
+
+h3. Examples
+
+If you are using form builders then use:
+
+<pre><%= f.eoc_text_field :attribute_name, :alt_text => "text-for-blank-state" %></pre>
+<pre><%= f.eoc_text_area :attribute_name, :alt_text => "text-for-blank-state" %></pre>
+<pre><%= f.eoc_select :attribute_name, choices, :alt_text => "text-for-blank-state", {} %></pre>
+
+
+You can also use it like:
+
+<pre><%= eoc_text_field object_name, :attribute_name, :alt_text => "text-for-blank-state" %></pre>
+<pre><%= eoc_text_area object_name, :attribute_name, :alt_text => "text-for-blank-state" %></pre>
+<pre><%= eoc_select object_name, :attribute_name, choices, :alt_text => "text-for-blank-state", {} %></pre>
+
+
+h3. Warnings
+
+* Tested only in Firefox 3
+
+Copyright (c) 2009 Udit Sajjanhar
