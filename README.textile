@@ -2,7 +2,7 @@ h1. Highrise Style Edit On Click
 
 If there are many input fields in a form, the form page clutters up. 
 
-This plugin makes input fields editable on click as mentioned here. http://37signals.com/designexplore/Highrise_Edit_Contacts
+This plugin makes input fields editable on click as mentioned <a href="http://37signals.com/designexplore/Highrise_Edit_Contacts">here</a>. 
 
 Each input field will have a blank state and an editable state. 
 
