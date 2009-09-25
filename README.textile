@@ -14,8 +14,7 @@ h3. Features
 
 h3. Installation
 
-If you have not installed this plugin using @script/plugin install@ script,
-then copy assets/javascripts/edit_on_click.js file to your public/javascripts folder.
+Copy assets/javascripts/edit_on_click.js file to your public/javascripts folder.
 To load this file with your Rails app simply add the following line to your layout:
 
 <pre><%= javascript_include_tag 'edit_on_click'%></pre>
