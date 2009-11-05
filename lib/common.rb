@@ -22,7 +22,7 @@ module HighriseStyle
       input_html = html.gsub(/<label.*?<\/label>/, "")
 
       if options[:show_alt_text]
-        alt_style       = "padding:10px;color:gray;font-style:italic;cursor:pointer"
+        alt_style       = "padding:10px;color:gray;cursor:pointer"
         content_style   = "display:none;"
         alt_id      = "eoc_alt_#{options[:id]}"
         content_id  = "eoc_content_#{options[:id]}" 
@@ -31,7 +31,7 @@ module HighriseStyle
 
         content_tag(:span, 
           (label_html + 
-          content_tag(:span, options[:alt_text], :id => alt_id, :style => alt_style, :class => "eoc-alt") + 
+          content_tag(:span, "#{options[:alt_text]}", :id => alt_id, :style => alt_style, :class => "eoc-alt") + 
           content_tag(:span, input_html, :style => content_style, :id => content_id, :class => "eoc-content eoc-unchanged") +
           javascript_tag("new EditOnClick('#{alt_id}', '#{content_id}', '#{wrap_id}')")), 
           :id => wrap_id, :class => "eoc-closed" )
