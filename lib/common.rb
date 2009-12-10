@@ -20,6 +20,8 @@ module HighriseStyle
       label_match = html.match(/(<label.*?<\/label>)/)
       label_html = label_match.nil? ? "" : label_match[1]
       input_html = html.gsub(/<label.*?<\/label>/, "")
+      input_html = input_html.gsub(/<p>/, "")
+      input_html = input_html.gsub(/<\/p>/, "")
 
       if options[:show_alt_text]
         alt_style       = "padding:10px;color:gray;cursor:pointer"
@@ -29,12 +31,10 @@ module HighriseStyle
         wrap_id     = "eoc_wrap_#{options[:id]}" 
 
 
-        content_tag(:span, 
-          (label_html + 
-          content_tag(:span, "#{options[:alt_text]}", :id => alt_id, :style => alt_style, :class => "eoc-alt") + 
-          content_tag(:span, input_html, :style => content_style, :id => content_id, :class => "eoc-content eoc-unchanged") +
-          javascript_tag("new EditOnClick('#{alt_id}', '#{content_id}', '#{wrap_id}')")), 
-          :id => wrap_id, :class => "eoc-closed" )
+        alt_text = content_tag(:span, "#{options[:alt_text]}", :id => alt_id, :style => alt_style, :class => "eoc-alt")
+        input_elem = content_tag(:span, input_html, :style => content_style, :id => content_id, :class => "eoc-content eoc-unchanged")
+        content_tag(:span, label_html + alt_text + input_elem, :id => wrap_id, :class => "eoc-closed" ) + javascript_tag("new EditOnClick('#{alt_id}', '#{content_id}', '#{wrap_id}')")
+
       else
         html
       end
