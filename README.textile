@@ -46,6 +46,6 @@ You can also use it like:
 
 h3. Warnings
 
-* Tested only in Firefox 3
+* Tested in Firefox 3 and Google Chrome
 
 Copyright (c) 2009 Udit Sajjanhar
